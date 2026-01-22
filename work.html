@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services — Batrisya Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #f1ede4; 
+            background-image: url("img.png");
+            background-size: 90% auto;
+            background-repeat: repeat;
+            background-position: center top;
+            font-family: 'IM Fell English', serif;
+        }
+
+        /* --- HEADER SATU BARIS (LOGO & NAV SEBARIS) --- */
+        header {
+            background-color: #6e2b3a;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between; /* Logo kiri, menu kanan */
+            align-items: center; 
+            height: 80px;
+            overflow: visible;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 0px; 
+            cursor: pointer;
+        }
+
+        .logo {
+            width: 306px;
+            height: auto;
+            transition: filter 0.3s ease;
+        }
+
+        .icon {
+            width: 80px;
+            height: auto;
+            margin-left: -35px; /* Ceri rapat dengan logo Trisyerz */
+            transition: filter 0.3s ease;
+        }
+
+        /* Glow Putih pada Logo & Ceri */
+        .brand-container:hover .logo, 
+        .brand-container:hover .icon {
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: #e8dcdc;
+            text-decoration: none;
+            font-size: 22px;
+            padding: 8px 15px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        /* Glow Putih pada Menu Navigasi */
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: #e8dcdc;
+            color: #6e2b3a;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 1);
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services-section {
+            padding: 100px 5% 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Glow Putih pada Tajuk Utama */
+        .services-title {
+            font-size: 45px;
+            color: #333;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: text-shadow 0.3s ease;
+        }
+
+        .services-title:hover {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px; 
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            text-align: left;
+        }
+
+        /* Glow Putih pada Frame Gambar Service */
+        .image-box {
+            width: 100%;
+            height: 450px; 
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-color: #ddd;
+            border: 5px solid transparent; /* Standby untuk border glow */
+            transition: all 0.4s ease;
+            border-radius: 15px;
+        }
+
+        .service-card:hover .image-box {
+            transform: scale(1.03);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 1);
+            border: 5px solid #fff;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        /* Glow Putih pada Teks Service (H2) */
+        .service-card h2 {
+            font-size: 22px;
+            color: #555;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 1px;
+            font-weight: normal;
+            transition: text-shadow 0.3s ease;
+        }
+
+        .service-card:hover h2 {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+            color: #6e2b3a;
+        }
+
+        /* Animasi masuk */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 992px) {
+            header { flex-direction: column; height: auto; padding: 20px; }
+            .services-container { flex-direction: column; align-items: center; }
+            .service-card { width: 100%; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand-container">
+            <img src="Trisyerz__1_-removebg-preview.png" alt="logo" class="logo">
+            <img src="cherry.png" alt="icon" class="icon">
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="work.html" class="active">Work</a>
+            <a href="library.html">Library</a>
+            
+        </nav>
+    </header>
+
+    <main class="services-section">
+        <h1 class="services-title">parttime work</h1>
+
+        <div class="services-container">
+            <div class="service-card reveal">
+                <div class="image-box">
+                    <img src="pic library/me.jpeg" alt="Products">
+                </div>
+                <h2>fashion | product</h2>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="image-box">
+                    <img src="pic library/ma.jpeg" alt="Booking">
+                </div>
+                <h2>lifestyle | homeliving</h2>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="image-box">
+                    <img src="pic library/da.jpeg" alt="Hair Extensions">
+                </div>
+                <h2>TOOLS | HOME APPLIANCE</h2>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>

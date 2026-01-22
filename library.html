@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batrisya Website — Real Polaroid Album</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #b98f99;
+            background-image: url("img.png");
+            background-size: 90% auto;
+            background-repeat: repeat;
+            background-position: center top;
+            font-family: 'IM Fell English', serif;
+        }
+
+        /* --- HEADER SEBARIS --- */
+        header {
+            background-color: #6e2b3a;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            height: 80px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 0px; 
+            cursor: pointer;
+        }
+
+        .logo {
+            width: 250px;
+            height: auto;
+        }
+
+        .icon {
+            width: 60px;
+            height: auto;
+            margin-left: -20px;
+        }
+
+        .brand-container:hover .logo, 
+        .brand-container:hover .icon {
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: #e8dcdc;
+            text-decoration: none;
+            font-size: 22px;
+            padding: 8px 15px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: #e8dcdc;
+            color: #6e2b3a;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 1);
+        }
+
+        /* --- MASONRY GRID POLAROID --- */
+        .gallery-wrapper {
+            padding: 80px 10%;
+            max-width: 1300px; 
+            margin: 0 auto;
+        }
+
+        .masonry-grid {
+            column-count: 3; 
+            column-gap: 50px;
+        }
+
+        .masonry-item {
+            display: inline-block; 
+            width: 100%;
+            margin-bottom: 50px; 
+            background-color: #fdfdfd; /* Warna kertas putih krim */
+            padding: 15px 15px 60px 15px; /* Ruang besar di bawah untuk kapsyen */
+            border-radius: 3px;
+            box-shadow: 
+                0 1px 3px rgba(0,0,0,0.12), 
+                0 10px 20px rgba(0,0,0,0.15); /* Bayang berlapis supaya nampak real */
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            break-inside: avoid;
+            position: relative;
+            transform: rotate(-2deg); /* Putaran asal */
+        }
+
+        /* Putaran rawak berbeza untuk setiap keping */
+        .masonry-item:nth-child(even) { transform: rotate(3deg); }
+        .masonry-item:nth-child(3n) { transform: rotate(-1deg); }
+
+        /* Kesan bila disentuh (Hover) */
+        .masonry-item:hover {
+            transform: scale(1.08) rotate(0deg) !important;
+            box-shadow: 0 15px 45px rgba(255, 255, 255, 0.6);
+            z-index: 100;
+        }
+
+        .masonry-item img {
+            width: 100%;
+            height: auto; 
+            display: block;
+            border: 1px solid rgba(0,0,0,0.05); /* Garis halus sekeliling gambar */
+            filter: contrast(1.1) brightness(1.05); /* Sedikit filter ala filem */
+        }
+
+        /* Kapsyen Tulisan Tangan */
+        .polaroid-caption {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-family: 'Reenie Beanie', cursive; /* Font ala tulisan pen */
+            font-size: 28px;
+            color: #444;
+            letter-spacing: 1px;
+        }
+
+        /* Penjuru Pita Pelekat (Tape) - Opsional untuk nampak lebih real */
+        .masonry-item::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            width: 100px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.3); /* Pita pelekat lutsinar */
+            transform: translateX(-50%);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 992px) {
+            header { flex-direction: column; height: auto; padding: 20px; }
+            .masonry-grid { column-count: 2; }
+            .gallery-wrapper { padding: 50px 5%; }
+        }
+
+        @media (max-width: 600px) {
+            .masonry-grid { column-count: 1; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand-container">
+            <img src="Trisyerz__1_-removebg-preview.png" alt="logo" class="logo">
+            <img src="cherry.png" alt="icon" class="icon">
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="work.html">Work</a>
+            <a href="library.html" class="active">Library</a>
+            
+        </nav>
+    </header>
+
+    <main class="gallery-wrapper">
+        <div class="masonry-grid">
+            <div class="masonry-item">
+                <img src="pic library/bat pic.jpeg">
+                <div class="polaroid-caption">sweet memories</div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="pic library/xsxsxs.jpeg">
+                <div class="polaroid-caption">golden hours</div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="pic library/kkkmdkm.jpeg">
+                <div class="polaroid-caption">just vibe</div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="pic library/xs.jpeg">
+                <div class="polaroid-caption">at the shot</div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="pic library/mm.jpeg">
+                <div class="polaroid-caption">cherished moment</div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="pic library/kk.jpeg">
+                <div class="polaroid-caption">friendship</div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="pic library/efjjnvn.jpeg">
+                <div class="polaroid-caption">vintage life</div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="pic library/lkklk.jpeg">
+                <div class="polaroid-caption">stay real</div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="pic library/sss.jpeg">
+                <div class="polaroid-caption">unforgettable</div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="pic library/nbnb v n.jpeg">
+                <div class="polaroid-caption">the journey</div>
+            </div>
+            
+            <div class="masonry-item">
+                <img src="pic library/iiiiiii.jpeg">
+                <div class="polaroid-caption">forever young</div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="pic library/hiiihi.jpeg">
+                <div class="polaroid-caption">hello there</div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

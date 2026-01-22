@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batrisya Website — About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #f1ede4; 
+            background-image: url("img.png");
+            background-size: 90% auto;
+            background-repeat: repeat;
+            background-position: center top;
+            font-family: 'IM Fell English', serif;
+        }
+
+        /* --- HEADER SATU BARIS --- */
+        header {
+            background-color: #6e2b3a;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            overflow: visible;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 0px; 
+            cursor: pointer;
+        }
+
+        .logo {
+            width: 306px;
+            height: auto;
+            transition: filter 0.3s ease;
+        }
+
+        .icon {
+            width: 80px;
+            height: auto;
+            margin-left: -30px; 
+            transition: filter 0.3s ease;
+        }
+
+        .brand-container:hover .logo, 
+        .brand-container:hover .icon {
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: #e8dcdc;
+            text-decoration: none;
+            font-size: 22px;
+            padding: 8px 15px;
+            transition: all 0s ease;
+            border-radius: 8px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: #e8dcdc;
+            color: #6e2b3a;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 1);
+        }
+
+        /* --- ABOUT CONTENT SECTION --- */
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 8% 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 80px;
+        }
+
+        /* --- ANIMASI FADE IN AUTO --- */
+        @keyframes autoFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-image {
+            flex: 1;
+            max-width: 500px;
+            display: flex;
+            justify-content: center;
+            /* Menggunakan animasi auto apabila page dibuka */
+            animation: autoFadeIn 1.5s ease-out forwards;
+        }
+
+        .arch-frame {
+            width: 100%;
+            height: 650px;
+            border-radius: 250px 250px 0 0; 
+            overflow: hidden;
+            border: 8px solid #f1ede4;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+
+        .arch-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 45px rgba(255, 255, 255, 1);
+        }
+
+        .arch-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content {
+            flex: 1.2;
+            max-width: 700px;
+            text-align: center;
+            /* Kandungan teks juga muncul perlahan */
+            animation: autoFadeIn 2s ease-out forwards;
+        }
+
+        .about-content h1 {
+            font-size: 42px;
+            color: #6e2b3a;
+            margin-bottom: 40px;
+            font-weight: normal;
+            line-height: 1.3;
+            transition: text-shadow 0.3s ease;
+        }
+
+        .about-content h1:hover {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+
+        .about-content p {
+            font-size: 22px;
+            line-height: 1.8;
+            color: #0;
+            margin-bottom: 25px;
+            transition: text-shadow 0.5s ease;
+        }
+
+        .about-content p:hover {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 992px) {
+            header { flex-direction: column; height: auto; padding: 20px; }
+            .about-container { flex-direction: column; padding-top: 50px; }
+            .arch-frame { height: 500px; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand-container">
+            <img src="Trisyerz__1_-removebg-preview.png" alt="logo" class="logo">
+            <img src="cherry.png" alt="icon" class="icon">
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About Me</a>
+            <a href="work.html">Work</a>
+            <a href="library.html">Library</a>
+            
+        </nav>
+    </header>
+
+    <main class="about-container">
+        <div class="about-image">
+            <div class="arch-frame">
+                <img src="pic library/ood.jpeg" alt="About Me Profile">
+            </div>
+        </div>
+
+        <div class="about-content">
+            <h1>BATRISYA AMANI ANAK JEMAN</h1>
+            
+            <p>I am the ELDEST DAUGHTER and definitely first born daughter.
+            I lived in Selangor, and my first school is at Tabika MCA Bukit Kuchai ketika saya berusia 5 dan 6 tahun. Kemudian saya ke SK TAMAN DESAMINIUM di SERI KEMBANGAN hanya untuk tahun 7. Pada tahun 8 sehingga UPSR saya sambung belajar di SK BANGI dan seterusnya SMK BANDAR SERI PUTRA dari tingkatan 1 sehingga SPM.</p>
+            
+            <p>Sekarang saya menyambung pelajaran di UiTM ALOR GAJAH dalam bidang masscomm.</p>
+            
+            <p>Saya juga menyertai KELAB RAKAN KAUNSELOR di UiTM Alor Gajah. Sesiapa sahaja boleh datang mencari saya setiap kali mereka merasa penat dengan kehidupan hmmmm (rumah singgah).</p>
+        </div>
+    </main>
+
+</body>
+</html>
